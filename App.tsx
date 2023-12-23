@@ -1,118 +1,61 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import {View, Text,Image} from 'react-native';
 
 import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+const App = () => {
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
+    <>
+      <View style={{padding: 20}}>
+        <View style={{
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+      
+      }}
+       >
+          <Text style={{color: 'gray', marginTop:20}}>Friday, 15 Dec</Text>
 
-function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
+          <Image
+        style={{width:30,height:30,marginTop:20}}
+        source={{
+          uri: 'https://static.vecteezy.com/system/resources/thumbnails/000/581/739/small/icon0-vector-557-01.jpg',
+        }}
       />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
-}
 
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
+        </View>
+
+        <View>
+          <Text style={{fontSize: 34, fontWeight: 'bold',marginTop:20,color:'black'}}>Learn</Text>
+
+          <Text style={{paddingBottom:20, color:'black',fontSize:18}}>Choose part of the body</Text>
+        </View>
+
+        <View style={{backgroundColor:'lightsalmon', borderRadius:10}}>
+          
+          <Text style={{fontSize:26,fontWeight:'bold',color:'white',marginStart:20}}> Head & Face </Text>
+          <Text style={{fontSize:18,color:'white',marginStart:20}}> 11 diseases </Text>
+        </View>
+
+        <View style={{backgroundColor:'lightblue',marginTop:20,borderRadius:10}}>
+          
+          <Text style={{fontSize:26,fontWeight:'bold',color:'white',marginStart:20}}> Back & Neck </Text>
+          <Text style={{fontSize:18,color:'white',marginStart:20}}> 9 diseases </Text>
+        </View>
+
+        <View style={{backgroundColor:'orange',marginTop:20,borderRadius:10}}>
+          
+          <Text style={{fontSize:26,fontWeight:'bold',color:'white',marginStart:20}}> Elbow & Shoulders </Text>
+          <Text style={{fontSize:18,color:'white',marginStart:20}}> 12 diseases </Text>
+        </View>
+
+        <View style={{backgroundColor:'royalblue',marginTop:20,borderRadius:10}}>
+          
+          <Text style={{fontSize:26,fontWeight:'bold',color:'white',marginStart:20}}> Hand & Arm </Text>
+          <Text style={{fontSize:18,color:'white',marginStart:20}}> 2 diseases </Text>
+        </View>
+
+      </View>
+    </>
+  );
+};
 
 export default App;
